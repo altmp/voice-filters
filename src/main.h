@@ -11,3 +11,5 @@
 #include <unordered_map>
 
 #include "IAudioFilter.h"
+
+using namespace alt;

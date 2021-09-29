@@ -2,9 +2,9 @@
 #include "filters/MuteChannel/MuteChannel.h"
 
 extern "C" __declspec(dllexport)
-alt::IAudioFilter* CreateFilter(const std::string& name)
+IAudioFilter* CreateFilter(const size_t& nameHash)
 {
-    if(name == "MuteChannel")
+    if(nameHash == IAudioFilter::hash("MuteChannel"))
         return new MuteChannel();
 
     return nullptr;

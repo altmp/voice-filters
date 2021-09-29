@@ -1,14 +1,16 @@
 #include "MuteChannel.h"
 
-void MuteChannel::SetParam(const std::string& key, bool value)
+using namespace alt;
+
+void MuteChannel::SetParam(const size_t& key, bool value)
 {
-    if (key == "isLeft")
+    if (key == hash("isLeft"))
         isLeft = value;
 }
 
-void MuteChannel::GetParam(const std::string& key, bool& value)
+void MuteChannel::GetParam(const size_t& key, bool& value)
 {
-    if (key == "isLeft")
+    if (key == hash("isLeft"))
         value = isLeft;
 }
 
