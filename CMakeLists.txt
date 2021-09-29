@@ -38,4 +38,5 @@ set(CMAKE_CONFIGURATION_TYPES Debug Release)
 
 target_include_directories(voice-filters
     PRIVATE
+    ./cpp-sdk
 )
