@@ -19,7 +19,7 @@ endmacro()
 
 GroupSources(${CMAKE_SOURCE_DIR}/src "Source Files")
 
-add_library(voice-filters ${PROJECT_SOURCE_FILES})
+add_library(voice-filters SHARED ${PROJECT_SOURCE_FILES})
 
 include_directories(
     ./src
@@ -36,7 +36,6 @@ set_target_properties(voice-filters PROPERTIES
 
 set(CMAKE_CONFIGURATION_TYPES Debug Release)
 
-target_include_directories(voice-filters
-    PRIVATE
+target_include_directories(voice-filters PRIVATE
     ./cpp-sdk
 )
