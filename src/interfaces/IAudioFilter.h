@@ -16,7 +16,7 @@ namespace alt
             union
             {
                 pcm16 channels;
-                int16_t sample;
+                int32_t sample;
             };
         };
 
