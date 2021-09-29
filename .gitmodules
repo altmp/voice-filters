@@ -1,0 +1,3 @@
+[submodule "cpp-sdk"]
+	path = cpp-sdk
+	url = ../cpp-sdk.git
