@@ -21,6 +21,11 @@ jobs:
         with:
           submodules: 'recursive'
 
+      - name: Setup cmake
+        uses: jwlawson/actions-setup-cmake@v1.9
+        with:
+          cmake-version: '3.17.x'
+
       - name: Build Release
         run: release.bat
 
