@@ -16,6 +16,7 @@ jobs:
         shell: cmd
 
     steps:
+      - uses: microsoft/setup-msbuild@v1.0.2
       - uses: actions/checkout@v2.2.0
         with:
           submodules: 'recursive'
