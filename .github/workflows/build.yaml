@@ -1,0 +1,43 @@
+name: Build & deploy
+
+on:
+  push:
+    branches-ignore: 
+      - '**'
+    tags:
+      - 'v*'
+
+jobs:
+  x64_win32:
+    runs-on: windows-2019
+
+    defaults:
+      run:
+        shell: cmd
+
+    steps:
+      - uses: actions/checkout@v2.2.0
+        with:
+          submodules: 'recursive'
+
+      - name: Build Release
+        run: release.bat
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+
+      - name: Upload voice-filters.dll
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: BUILD/VS2019/BIN/Release/voice-filters.dll
+          asset_name: voice-filters.dll
+          asset_content_type: application/octet-stream
