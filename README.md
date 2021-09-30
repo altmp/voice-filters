@@ -30,6 +30,8 @@ An example DSP filter, MuteChannel has been added as an example.
 
 ## Testing your filter
 
+**The filter tester supports WAV input only, 44.1 KHz 2 channels**
+
 A filter tester was uploaded in this repository in the test folder. Place your voice-filters.dll in the test folder and use the filter-tester.exe with the following command line args:
 
 `filter-tester.exe input <input file name> output <output file name> filter <filter name> <paramname>=<value> `
