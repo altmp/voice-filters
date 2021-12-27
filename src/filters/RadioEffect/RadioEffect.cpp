@@ -4,9 +4,6 @@
 #include <iostream>
 #include <iomanip>
 
-using namespace alt;
-using namespace Dsp;
-
 void RadioEffect::Process(pcmSample* data, uint32_t size) {
     int numSamples = size / 2;
     Init();
